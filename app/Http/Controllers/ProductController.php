@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController as BaseController;
+use Validator;
 
 class ProductController extends BaseController
 {
@@ -15,11 +16,10 @@ class ProductController extends BaseController
      */
     public function index()
     {
-//        $products = Product::latest()->paginate(5);
-//
+//        $members = Member::latest()->paginate(5);
 //        return view('products.index',compact('products'))
 //            ->with('i', (request()->input('page', 1) - 1) * 5);
-        $members =Member::all();
+        $members = Member::all();
         return $this->sendResponse($members->toArray(), 'Members retrieved successfully.');
     }
 
@@ -36,10 +36,15 @@ class ProductController extends BaseController
             'password' => ['required', 'string', 'min:6', 'max:12'],
         ]);
 
-        Member::create($request->all());
+        //if(isAdmin)
+        if(Member::create($request->all())){
+            return redirect()->route('products.index')
+            ->with('success', 'User created successfully.');
+        }
 
-        return redirect()->route('products.index')
-            ->with('success','User created successfully.');
+        //else{
+            //return 'User created successfully.;
+        //}
     }
 
     /**
@@ -51,15 +56,21 @@ class ProductController extends BaseController
      */
     public function update(Request $request, Member $member)
     {
-        $request->validate([
+        $input = $request->all();
+        $validator = Validator::make($input, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'max:12'],
         ]);
 
-        $member->update($request->all());
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
 
-        return redirect()->route('products.index')
-            ->with('success','Product updated successfully');
+        $member->email = $input['email'];
+        $member->password = $input['password'];
+        $member->save();
+
+        return $this->sendResponse($member->toArray(), 'Member updated successfully.');
     }
 
     /**
@@ -72,7 +83,6 @@ class ProductController extends BaseController
     {
         $member->delete();
 
-        return redirect()->route('products.index')
-            ->with('success','Product deleted successfully');
+        return $this->sendResponse($member->toArray(), 'Member deleted successfully.');
     }
 }
