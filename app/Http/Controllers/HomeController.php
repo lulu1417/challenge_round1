@@ -23,7 +23,6 @@ class HomeController extends Controller
      */
     public function index(user $user)
     {
-        var_dump($user);
         return view('home');
     }
 }

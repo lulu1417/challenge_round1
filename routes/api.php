@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::middleware('auth:api')->resource('products','ProductController',['except' => ['store']]);
-Route::resource('products','ProductController',['only' => ['store']]);
-
+//Route::middleware('auth:api')->resource('products','ProductController',['except' => ['store']]);
+Route::resource('user','ProductController',['only' => ['store']]);
+//Route::middleware('auth:api')->resource('products','ProductController');
+Route::middleware('auth:api')->get('user', 'ProductController@index');
+Route::middleware('auth:api')->put('user', 'ProductController@update');
+Route::middleware('auth:api')->delete('user/{users}', 'ProductController@destroy');

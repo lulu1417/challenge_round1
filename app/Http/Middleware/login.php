@@ -16,6 +16,7 @@ class login
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
+        if(!taken::checkIfTakenToken)
         return $next($request);
     }
 }
