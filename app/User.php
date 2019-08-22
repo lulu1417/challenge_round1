@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'isAdmin', 'api_token'
     ];
 
     /**
@@ -37,3 +37,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
