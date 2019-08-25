@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController as BaseController;
 use Validator;
 
-class ProductController extends BaseController
+class UserController extends BaseController
 {
     /**
      * Display a listing of the resource.
