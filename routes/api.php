@@ -18,8 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 //Route::middleware('auth:api')->resource('products','ProductController',['except' => ['store']]);
 Route::post('login', 'LoginController@login');
-Route::resource('user','ProductController',['only' => ['store']]);
-Route::middleware('auth:api')->get('user', 'ProductController@index');
-Route::middleware('auth:api')->put('user', 'ProductController@update');
-Route::middleware('auth:api')->delete('user/{users}', 'ProductController@destroy');
+Route::resource('user','UserController',['only' => ['store']]);
+Route::middleware('auth:api')->get('user', 'UserController@index');
+Route::middleware('auth:api')->put('user', 'UserController@update');
+Route::middleware('auth:api')->delete('user/{users}', 'UserController@destroy');
 Route::middleware('auth:api')->get('logout', 'LogoutController@logout');

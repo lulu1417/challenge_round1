@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ecea339-1df6-4a8c-979a-ded81415c955" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LogoutController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogoutController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +162,7 @@
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="ProductController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
+    <configuration name="UserController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <method v="2" />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/public/index.php">
@@ -174,7 +170,7 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Unnamed" />
-      <item itemvalue="PHP Script.ProductController.php" />
+      <item itemvalue="PHP Script.UserController.php" />
       <item itemvalue="PHPUnit.phpunit.xml" />
     </list>
   </component>
@@ -205,7 +201,7 @@
       <workItem from="1566555395718" duration="1140000" />
       <workItem from="1566558391624" duration="6194000" />
       <workItem from="1566726860476" duration="677000" />
-      <workItem from="1566727583903" duration="173000" />
+      <workItem from="1566727583903" duration="1456000" />
     </task>
     <servers />
   </component>
